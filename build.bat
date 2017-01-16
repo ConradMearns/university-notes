@@ -1,7 +1,14 @@
 @echo off
 
-REM Takes a single filename argument as input and uses pdflatex to build into a PDF before cleaning temp files
+IF /I "%1"=="-a" (
+  FOR %%f IN (*.tex) DO (
+    pdflatex "%%~nf.tex" -output-directory docs
+  )
+) ELSE (
+  pdflatex %1 -output-directory docs
+)
 
-pdflatex %1
+cd docs
 rm *.aux
 rm *.log
+cd ..
