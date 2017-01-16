@@ -1,0 +1,117 @@
+\documentclass{article}
+
+\title{Calculus and Analytical Geometry II Notes}
+\author{Conrad A. Mearns}
+
+\begin{document}
+
+\maketitle
+
+\noindent
+\Large
+January 12, 2017\\\\
+Review of Limits\\
+\normalsize
+
+\noindent
+Theorems for Limits:\\
+Let $a$ and $c$ be any number, if $F = \lim_{x \to a}f(x)$ and $G = \lim_{x \to a}g(x)$ then
+
+\begin{enumerate}
+  \item $\lim_{x \to a}(f(x) + g(x)) = F + G$
+  \item $\lim_{x \to a}(f(x) - g(x)) = F - G$
+  \item $\lim_{x \to a}(c * f(x)) = c * F$
+  \item $\lim_{x \to a}(\frac{f(x)}{g(x)}) = \frac{\lim_{x \to a}f(x)}{\lim_{x \to a}g(x)}$ except when $G = 0$
+  \item $\lim_{x \to a}(f(x))^c = F^c$
+\end{enumerate}
+
+\noindent
+\Large
+Limits Involving Infinity while $c \neq 0$\\
+\normalsize
+\noindent
+These are templates, where $x$ is either taken to $\infty$ or 0.
+
+\begin{enumerate}
+  \item $c * (\pm \infty) = \pm \infty$ Example: $\lim_{x \to \infty}5x = \infty$
+  \item $\frac{c}{\pm \infty} = 0$ Example: $\lim_{x \to \infty}\frac{5}{x} = 0$
+  \item $\frac{c}{0} = \pm \infty$ Example: $\lim_{x \to 0}\frac{5}{0} = \infty$
+  \item $\frac{\pm \infty}{c} = \pm \infty$
+\end{enumerate}
+
+\noindent
+\Large
+Limits that can't be dealt with
+\normalsize
+\noindent
+\begin{itemize}
+  \item $\frac{0}{0}$
+  \item $\frac{\infty}{\infty}$
+  \item $\infty - \infty$
+  \item $0 * \infty$
+\end{itemize}
+
+\noindent
+\Large
+Limits of Rational Functions\\
+\normalsize
+\noindent
+Let $d$ represent the degree of $f(x)$ and $e$ represent the degree of $g(x)$.\\
+Theorem: Given a rational function $\frac{f(x)}{g(x)}$, the following is be true.
+\begin{enumerate}
+  \item If $d > e$ then $\lim_{x \to \infty}\frac{f(x)}{g(x)} = \pm \infty$
+  \item If $d < e$ then $\lim_{x \to \infty}\frac{f(x)}{g(x)} = 0$
+  \item If $d = e$ then $\lim_{x \to \infty}\frac{f(x)}{g(x)} = \frac{a}{b}$ where $a$ is the leading term of $f(x)$ and $b$ is the leading term of $g(x)$
+\end{enumerate}
+
+\noindent
+Example: To evalute $lim_{x \to \infty}\frac{10x^3 - 3x^2 + 8}{\sqrt{25x^6 + x^4 + 2}}$ first reduce all terms by $x$ of the leading coefficient's degree.\\
+$\frac{10 - 3x^{-1} + 8x^{-3}}{\sqrt{25 + x^{-2} + 2x^{-6}}}$ Then take the limit of each term.\\
+$\frac{10 - 0 + 0}{\sqrt{25 + 0 + 0}}$ Simplifiy.\\
+$\frac{10}{\sqrt{25}} = \frac{10}{5} = 2$\\
+
+\noindent
+\Large Inverse Trig Functions\\
+\normalsize
+\noindent
+Definition: $y = sin^{-1}x$ is the value of $y$ such that $x = siny$.\\
+\indent
+Domain: $-1 \leq x \leq 1$\\
+\indent
+Range: $\frac{-\pi}{2} \leq y \leq \frac{\pi}{2}$\\
+
+\noindent
+Definition: $y = cos^{-1}x$ is the value of $y$ such that $x = cosy$.\\
+\indent
+Domain: $-1 \leq x \leq 1$\\
+\indent
+Range: $0 \leq y \leq \pi$\\
+
+\noindent
+\Large Inverse Trig Identities
+\normalsize
+\noindent
+\begin{itemize}
+  \item $sin(sin^{-1}x) = x$
+  \item $cos(cos^{-1}x) = x$
+  \item $sin^{-1}(sinx) = x$ only if $x$ is in range of $sin^{-1}$
+  \item $cos^{-1}(cosx) = x$ only if $x$ is in range of $cos^{-1}$
+\end{itemize}
+
+\noindent
+Example: $sin^{-1}(sin\pi) = sin^{-1}(0) = 0 \neq \pi$\\
+
+\noindent
+Example: $cos(sin^{-1}x)$\\
+Let $y = sin^{-1}x$ so that $x = siny$ and $cos(sin^{-1}x) = cosy$\\
+Recall that $sin = \frac{opposite}{hypotenuse}$\\
+Let $hypotenuse = 1$ and $opposite = b$ where $b$ has yet to be determined.\\
+Recall that $cosy = \frac{adjacent}{hypotenuse}$\\
+$\frac{adjacent}{hypotenuse} = \frac{b}{1}$, and therefor $cosy = b$\\
+Use the Pythagorean Theorem to solve: $x^2 + b^2 = 1^2$\\
+$b^2 = 1 - x^2$\\
+$b = \sqrt{1 - x^2}$\\
+Therefor $cos(sin^{-1}x) = \sqrt{1 - x^2}$
+
+
+\end{document}
