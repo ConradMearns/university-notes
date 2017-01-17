@@ -9,12 +9,10 @@
 
 \noindent
 \Large
-January 12, 2017\\\\
-Review of Limits\\
+Review of Theorems for Limits\\
 \normalsize
 
 \noindent
-Theorems for Limits:\\
 Let $a$ and $c$ be any number, if $F = \lim_{x \to a}f(x)$ and $G = \lim_{x \to a}g(x)$ then
 
 \begin{enumerate}
@@ -56,8 +54,8 @@ Limits that can't be dealt with
 Limits of Rational Functions\\
 \normalsize
 \noindent
-Let $d$ represent the degree of $f(x)$ and $e$ represent the degree of $g(x)$.\\
 Theorem: Given a rational function $\frac{f(x)}{g(x)}$, the following is be true.
+Let $d$ represent the degree of $f(x)$ and $e$ represent the degree of $g(x)$.\\
 \begin{enumerate}
   \item If $d > e$ then $\lim_{x \to \infty}\frac{f(x)}{g(x)} = \pm \infty$
   \item If $d < e$ then $\lim_{x \to \infty}\frac{f(x)}{g(x)} = 0$
@@ -65,10 +63,13 @@ Theorem: Given a rational function $\frac{f(x)}{g(x)}$, the following is be true
 \end{enumerate}
 
 \noindent
-Example: To evalute $lim_{x \to \infty}\frac{10x^3 - 3x^2 + 8}{\sqrt{25x^6 + x^4 + 2}}$ first reduce all terms by $x$ of the leading coefficient's degree.\\
-$\frac{10 - 3x^{-1} + 8x^{-3}}{\sqrt{25 + x^{-2} + 2x^{-6}}}$ Then take the limit of each term.\\
-$\frac{10 - 0 + 0}{\sqrt{25 + 0 + 0}}$ Simplifiy.\\
-$\frac{10}{\sqrt{25}} = \frac{10}{5} = 2$\\
+Example: To evalute $lim_{x \to \infty}\frac{10x^3 - 3x^2 + 8}{\sqrt{25x^6 + x^4 + 2}}$
+\begin{enumerate}
+  \item {Reduce all terms by $x$ of the leading coefficient's degree.}
+  \item {Then take the limit of each term. $\frac{10 - 3x^{-1} + 8x^{-3}}{\sqrt{25 + x^{-2} + 2x^{-6}}}$}
+  \item {Simplifiy. $\frac{10 - 0 + 0}{\sqrt{25 + 0 + 0}}$}
+  \item {$\frac{10}{\sqrt{25}} = \frac{10}{5} = 2$}
+\end{enumerate}
 
 \noindent
 \Large Inverse Trig Functions\\
@@ -102,16 +103,18 @@ Range: $0 \leq y \leq \pi$\\
 Example: $sin^{-1}(sin\pi) = sin^{-1}(0) = 0 \neq \pi$\\
 
 \noindent
-Example: $cos(sin^{-1}x)$\\
-Let $y = sin^{-1}x$ so that $x = siny$ and $cos(sin^{-1}x) = cosy$\\
-Recall that $sin = \frac{opposite}{hypotenuse}$\\
-Let $hypotenuse = 1$ and $opposite = b$ where $b$ has yet to be determined.\\
-Recall that $cosy = \frac{adjacent}{hypotenuse}$\\
-$\frac{adjacent}{hypotenuse} = \frac{b}{1}$, and therefor $cosy = b$\\
-Use the Pythagorean Theorem to solve: $x^2 + b^2 = 1^2$\\
-$b^2 = 1 - x^2$\\
-$b = \sqrt{1 - x^2}$\\
-Therefor $cos(sin^{-1}x) = \sqrt{1 - x^2}$
+Example: $cos(sin^{-1}x)$
+\begin{enumerate}
+  \item {Let $y = sin^{-1}x$ so that $x = siny$ and $cos(sin^{-1}x) = cosy$\\}
+  \item {Recall that $sin = \frac{opposite}{hypotenuse}$\\}
+  \item {Let $hypotenuse = 1$ and $opposite = b$ where $b$ has yet to be determined.\\}
+  \item {Recall that $cosy = \frac{adjacent}{hypotenuse}$\\}
+  \item {$\frac{adjacent}{hypotenuse} = \frac{b}{1}$, and therefor $cosy = b$\\}
+  \item {Use the Pythagorean Theorem to solve: $x^2 + b^2 = 1^2$\\}
+  \item {$b^2 = 1 - x^2$\\}
+  \item {$b = \sqrt{1 - x^2}$\\}
+  \item {Therefor $cos(sin^{-1}x) = \sqrt{1 - x^2}$}
+\end{enumerate}
 
 
 \end{document}
