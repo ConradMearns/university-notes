@@ -39,7 +39,7 @@ These are templates, where $x$ is either taken to $\infty$ or 0.
 
 \noindent
 \Large
-Limits that can't be dealt with
+Impossible Limits
 \normalsize
 \noindent
 \begin{itemize}
@@ -89,6 +89,27 @@ Domain: $-1 \leq x \leq 1$\\
 Range: $0 \leq y \leq \pi$\\
 
 \noindent
+Other Trig Functions
+\begin{itemize}
+  \item {
+  $y = tan^{-1}x \to x = tany$\\
+  Range: $\frac{-\pi}{2} < y < \frac{\pi}{2}$
+  }
+  \item {
+  $y = cot^{-1}x \to x = coty$\\
+  Range: $0 < y < \pi$
+  }
+  \item {
+  $y = sec^{-1}x \to x = secy$\\
+  Range: $0 \leq y \leq \pi, y \neq\frac{\pi}{2}$
+  }
+  \item {
+  $y = csc^{-1}x \to x = cscy$\\
+  Range: $\frac{-\pi}{2} \leq y \leq \frac{\pi}{2}, y \neq 0$
+  }
+\end{itemize}
+
+\noindent
 \Large Inverse Trig Identities
 \normalsize
 \noindent
@@ -116,5 +137,62 @@ Example: $cos(sin^{-1}x)$
   \item {Therefor $cos(sin^{-1}x) = \sqrt{1 - x^2}$}
 \end{enumerate}
 
+\noindent
+\Large Derivatives of Inverse Trig Functions
+\normalsize
+\noindent
+
+\begin{itemize}
+  \item {
+  $\frac{d}{dx}(sin^{-1}x) = \frac{1}{\sqrt{1-x^2}}$
+  }
+  \item {
+  $\frac{d}{dx}(cos^{-1}x) = \frac{-1}{\sqrt{1-x^2}}$
+  }
+  \item {
+  $\frac{d}{dx}(tan^{-1}x) = \frac{1}{1+x^2}$
+  }
+  \item {
+  $\frac{d}{dx}(cot^{-1}x) = \frac{-1}{1-x^2}$
+  }
+  \item {
+  $\frac{d}{dx}(sec^{-1}x) = \frac{1}{|x|\sqrt{x^2-1}}$
+  }
+  \item {
+  $\frac{d}{dx}(csc^{-1}x) = \frac{-1}{|x|\sqrt{x^2-1}}$
+  }
+\end{itemize}
+
+\noindent
+\Large Antiderivatives Involving Inverse Trig Functions
+\normalsize
+\noindent
+
+\begin{itemize}
+  \item {
+  $\int\frac{dx}{\sqrt{a^2 - x^2}} = sin^{-1}\frac{x}{a}+C$
+  }
+  \item {
+  $\int\frac{dx}{\sqrt{a^2 + x^2}} = \frac{1}{a}tan^{-1}\frac{x}{a}+C$
+  }
+  \item {
+  $\int\frac{dx}{x\sqrt{x^2 - a^2}} = \frac{1}{a}sec^{-1}\frac{x}{a}+C$
+  }
+\end{itemize}
+
+\noindent
+\Large L'Hopital's Rule\\
+\normalsize
+\noindent
+
+L'Hopital's Rule let's us evaluate impossible limits.\\\\
+
+\noindent
+Theorem: Suppose $f(x)$ and $g(x)$ are differentiable on an open interval $I$ containing $a$ where $g'(x) \neq 0$ on I when $x \neq a$. If
+\begin{enumerate}
+  \item $\lim_{x \to a}f(x) = \lim_{x \to a}g(x) = 0$
+  \item $\lim_{x \to a}f(x) = \pm\infty$ and $\lim_{x \to a}g(x) = \pm\infty$
+\end{enumerate}
+then $\lim_{x \to a}\frac{f(x)}{g(x)} = \lim_{x \to a}\frac{f'(x)}{g'(x)}$. This is also true as $x \to \pm\infty, x \to a^+, x \to a^-$.
 
 \end{document}
