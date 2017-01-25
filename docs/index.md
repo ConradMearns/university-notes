@@ -8,4 +8,4 @@ The purpose of this index is to provide [myself](http://conrads.website "Hi, I'm
 + Engineering Physics I ([PHYS211](PHYS211.pdf))
 + Analytical Geometry and Calculus II ([MATH175](MATH175.pdf))
 + Introduction to Political Science and American Government ([POLS101](POLS101.pdf))
-+ Foundations of Electrical and Computer Engineering (ECE101)
++ Foundations of Electrical and Computer Engineering ([ECE101](ECE101.pdf))

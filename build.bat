@@ -9,6 +9,6 @@ IF /I "%1"=="-a" (
 )
 
 cd docs
-rm *.aux
-rm *.log
+del *.aux
+del *.log
 cd ..

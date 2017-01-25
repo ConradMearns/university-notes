@@ -1,5 +1,6 @@
 \documentclass{article}
 \usepackage{tikz}
+\usepackage[american]{circuitikz}
 
 \usetikzlibrary{arrows,decorations.markings}
 
@@ -9,6 +10,29 @@
 \begin{document}
 
 \maketitle
+
+\noindent
+\Large
+Elements\\
+\normalsize
+\begin{enumerate}
+  \item {
+  Independent Voltage Source\\
+  \begin{circuitikz}
+    \draw (0,0) to[voltage source] (2,0)
+    (4,0) to[voltage source] (2,0);
+  \end{circuitikz}\\
+  Provides a fixed voltage independent of what is already attached to the circuit.
+  }
+  \item {
+  Independant Current Source\\
+  \begin{circuitikz}
+    \draw (0,0) to[current source] (2,0)
+    (4,0) to[current source] (2,0);
+  \end{circuitikz}\\
+  Provides a fixed current independent of what is already attached to the circuit as long as there is a closed path.
+  }
+\end{enumerate}
 
 \noindent
 \Large
@@ -48,5 +72,46 @@ To determine if an element absorbs or supplies power:
   If current flows into the negative side $\to$ the element supplies power.
   }
 \end{enumerate}
+
+\noindent
+\Large
+Kirchhoff's Laws\\
+\normalsize
+\noindent
+\begin{enumerate}
+  \item {
+  Node $\equiv$ a node is a point in a circuit where two or more elements are connected. All points along a wire are the same node.
+  }
+  \item {
+  Loop $\equiv$ a loop in a circuit is a closed path that begins and ends at the same node and goes through at least one element.
+  }
+\end{enumerate}
+
+\noindent
+Kirchhoff's Current Law (KCL)\\
+\indent
+The total current into a node is equal to the total current out of the node.
+
+\noindent
+Kirchhoff's Voltage Law (KCL)\\
+\indent
+The sum of the voltages around a loop in the circuit is zero.\\
+When tracing the loop, if voltage goes from negative to positive through an element, the voltage is positive. If voltage goes from positive to negative, the voltage is negative.
+
+\noindent
+Both laws must be true in order to have a valid circuit.
+
+\noindent
+\Large
+Example of a Valid Circuit\\
+\normalsize
+\noindent
+\begin{circuitikz}
+  \draw
+  (0, 2) to[voltage source,v=$6V$] (0, 0)
+  (0, 2) to[current source,i=$3A$] (4, 2)
+  (4, 0) to[voltage source,v=$4V$] (4, 2)
+  (4,0) -- (0, 0);
+\end{circuitikz}
 
 \end{document}
