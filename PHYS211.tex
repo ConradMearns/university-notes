@@ -1,4 +1,6 @@
 \documentclass{article}
+\usepackage{tikz}
+
 
 \title{Engineering Physics I}
 \author{Conrad A. Mearns}
@@ -60,5 +62,50 @@ The following computes a new velocity of $v$ according to an object's initial ve
 The following equations can be combined as a system to calculate constant acceleration with velocity, position and time.
 When given a final velocity $v_f$ and an initial velocity $v_0$ one can deduce an average velocity ($v$ or $v_{avg}$)\\
 $v_f = v_0 + at$ and $x = x_0 + vt \to x = x_0 + (\frac{v_0 + v_f}{2})t \to x = x_0 + \frac{1}{2}(v_0 + v_0 + at)t \to x = x_0 + v_0t + \frac{1}{2}at^2$ after simplification.
+
+\noindent
+\Large
+Vectors and Vector Math\\
+\normalsize
+\begin{itemize}
+  \item Scalar $\equiv$ number, units $\equiv$ magnitude
+  \item Vector $\equiv$ number, units, direction $\equiv$ magnitude, direction
+\end{itemize}
+
+\indent
+Vectors allow for easier representation of position, velocity, and acceleration. A vector of velocity looks like $\vec{v}$ and can be drawn to look like the following.
+
+\begin{tikzpicture}
+  \draw (0,0) node [left] {$\vec{v}$};
+  \draw [-latex, thick] (0,0) -- (1,1);
+\end{tikzpicture}
+
+Vector addition takes two vectors and aligns them tail to tip. For example, suppose the following vectors $\vec{a}$, $\vec{b}$ and $\vec{c}$ such that $\vec{a} + \vec{b} = \vec{c}$.
+
+\begin{tikzpicture}
+  \draw (0,0) node [right] {$\vec{a}$};
+  \draw [-latex, thick] (0,0) -- (1,1);
+
+  \draw (1,1) node [right] {$\vec{b}$};
+  \draw [-latex, thick] (1,1) -- (0,1);
+
+  % Two pics
+
+  \draw (5,0) node [right] {$\vec{a}$};
+  \draw [-latex] (5,0) -- (6,1);
+
+  \draw (6,1) node [right] {$\vec{b}$};
+  \draw [-latex] (6,1) -- (5,1);
+
+  \draw (5,0) node [left] {$\vec{c}$};
+  \draw [-latex, thick] (5,0) -- (5,1);
+
+\end{tikzpicture}
+
+\noindent
+Vector addition is communative. $\vec{a} + \vec{b} = \vec{b} + \vec{a}$
+Vector addition is associativ. $\vec{a} + (\vec{b} + \vec{c}) = (\vec{a} + \vec{b}) + \vec{c}$
+
+
 
 \end{document}
