@@ -1,5 +1,6 @@
 \documentclass{article}
 \usepackage{tikz}
+\usepackage[american]{circuitikz}
 
 \usetikzlibrary{arrows,decorations.markings}
 
@@ -103,7 +104,7 @@ A "binary" point is abstractly added to the value. To the left of the point, eac
 
 For large numbers, we use scientific notation. $Sign * (Fraction * 2^{Exponent})$
 IEEE 754 Floating Point Standard for 32-bits signifies 1 bit for sign, 8 bits for the exponenant, and 23 bits for the fraction.
-$1 01111110 10000000000000000000000 = -1.5*2^{???}$
+$1-01111110-10000000000000000000000 = -1.5*2^{???}$
 
 \noindent
 \Large
@@ -115,6 +116,101 @@ Other Date Types
   \item Text strings are sequences of characters often with a NULL to terminate. No hardware support.
   \item Images are arrays of images. Often has hardware support.
   \item Sound is a sequence of fixed-point numbers.
+  \item Other data types my be defined abstractly by us and interpreted as needed.
 \end{enumerate}
+
+\noindent
+\Large
+Transistors\\
+\normalsize
+\indent
+Each transistor is a digital switch. When combined in different circuits, transitor combinations can emulate certain logical operations such as AND, OR, and NOT. These can then be combined to create adders, multiplexers, decoders, and other farther complex structures.\\
+Gordon Moore, an early founder of Intel, hypothesized that transistor count would double every two years. This is now known as Moore's Law.\\
+Transitors have 3 wells. A well is a homogeneous material that is either more or less positive than negative. A negative well is denoted $n$ and a positive well is denoted $p$. The gate in a transitor creates a field to allow or dissallow charge to migrate across wells.
+
+\noindent
+n-Type Transistor (npn)\\
+Two $n$ wells inside a large $p$ substrate.
+\begin{itemize}
+  \item When gate is tied to GND, the switch is open.\\
+    No current flows from the source to the drain.\\
+    '0 state'
+  \item When gate is tied to voltage the switch is closed.\\
+    Current flows from the source to the drain.\\
+    '1 state'
+\end{itemize}
+
+\noindent
+p-Type Transistor (pnp)\\
+Two $p$ wells inside a large $n$ substrate.
+\begin{itemize}
+  \item When gate is tied to GND, the switch is closed.\\
+    Current flows from the source to the drain.\\
+    '1 state'
+  \item When gate is tied to voltage the switch is open.\\
+    No current flows from the source to the drain.\\
+    '0 state'
+\end{itemize}
+
+\noindent
+\Large
+Complementary Metal Oxide Semiconductor Circuits(CMOS)\\
+\normalsize
+\begin{itemize}
+  \item NOT Gate (Inverter)
+  \item NOR Gate (NOT OR, Serial on top, Parallel on bottom)
+  \item OR Gate (NOR + NOT)
+  \item NAND Gate (NOT AND, Parallel on top, Series on bottom)
+  \item AND Gate (NAND + NOT)
+\end{itemize}
+
+\noindent
+\Large
+Simplified Gates\\
+\normalsize
+
+\begin{itemize}
+  \item {
+  NOT Gate\\
+  \begin{circuitikz}
+    \draw (0,0) node[not port]{} (2,0);
+  \end{circuitikz}
+  }
+  \item {
+  OR Gate\\
+  \begin{circuitikz}
+    \draw (0,0) node[or port]{} (2,0);
+  \end{circuitikz}
+  }
+  \item {
+  NOR Gate\\
+  \begin{circuitikz}
+    \draw (0,0) node[nor port]{} (2,0);
+  \end{circuitikz}
+  }
+  \item {
+  AND Gate\\
+  \begin{circuitikz}
+    \draw (0,0) node[and port]{} (2,0);
+  \end{circuitikz}
+  }
+  \item {
+  NAND Gate\\
+  \begin{circuitikz}
+    \draw (0,0) node[nand port]{} (2,0);
+  \end{circuitikz}
+  }
+\end{itemize}
+
+\noindent
+\Large
+Other Circuits\\
+\normalsize
+\begin{itemize}
+  \item 2-Bit Decoder\\
+    Uses 4 AND Gates with different inverter configurations on each. It maps 2 inputs to 4 outputs.
+  \item Multiplexer\\
+    Uses 4 inputs and interprets to 1 output.
+\end{itemize}
 
 \end{document}

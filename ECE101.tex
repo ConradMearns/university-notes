@@ -32,6 +32,22 @@ Elements\\
   \end{circuitikz}\\
   Provides a fixed current independent of what is already attached to the circuit as long as there is a closed path.
   }
+  \item {
+  Dependant (Controlled) Voltage Source\\
+  \begin{circuitikz}
+    \draw (0,0) to[controlled voltage source] (2,0)
+    (4,0) to[controlled voltage source] (2,0);
+  \end{circuitikz}\\
+  Provides a voltage dependant on some other voltage or current.
+  }
+  \item {
+  Dependant (Controlled) Current Source\\
+  \begin{circuitikz}
+    \draw (0,0) to[controlled current source] (2,0)
+    (4,0) to[controlled current source] (2,0);
+  \end{circuitikz}\\
+  Provides a current dependant on some other voltage or current.
+  }
 \end{enumerate}
 
 \noindent
@@ -103,15 +119,10 @@ Both laws must be true in order to have a valid circuit.
 
 \noindent
 \Large
-Example of a Valid Circuit\\
+Parallel Elements and Elements in Series\\
 \normalsize
 \noindent
-\begin{circuitikz}
-  \draw
-  (0, 2) to[voltage source,v=$6V$] (0, 0)
-  (0, 2) to[current source,i=$3A$] (4, 2)
-  (4, 0) to[voltage source,v=$4V$] (4, 2)
-  (4,0) -- (0, 0);
-\end{circuitikz}
+Series $\equiv$ two elements are in series if they share 1 node and no other element is attached to that node. Elements in series always have the same current.\\
+Parallel $\equiv$ two elements are parallel if they share 2 nodes. Parallel elements have the same voltage.
 
 \end{document}
