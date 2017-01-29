@@ -37,17 +37,17 @@ These are templates, where $x$ is either taken to $\infty$ or 0.
   \item $\frac{\pm \infty}{c} = \pm \infty$
 \end{enumerate}
 
-\noindent
-\Large
-Impossible Limits
-\normalsize
-\noindent
-\begin{itemize}
-  \item $\frac{0}{0}$
-  \item $\frac{\infty}{\infty}$
-  \item $\infty - \infty$
-  \item $0 * \infty$
-\end{itemize}
+% \noindent
+% \Large
+% Impossible Limits
+% \normalsize
+% \noindent
+% \begin{itemize}
+%   \item $\frac{0}{0}$
+%   \item $\frac{\infty}{\infty}$
+%   \item $\infty - \infty$
+%   \item $0 * \infty$
+% \end{itemize}
 
 \noindent
 \Large
@@ -173,7 +173,7 @@ Example: $cos(sin^{-1}x)$
   $\int\frac{dx}{\sqrt{a^2 - x^2}} = sin^{-1}\frac{x}{a}+C$
   }
   \item {
-  $\int\frac{dx}{\sqrt{a^2 + x^2}} = \frac{1}{a}tan^{-1}\frac{x}{a}+C$
+  $\int\frac{dx}{a^2 + x^2} = \frac{1}{a}tan^{-1}\frac{x}{a}+C$
   }
   \item {
   $\int\frac{dx}{x\sqrt{x^2 - a^2}} = \frac{1}{a}sec^{-1}\frac{x}{a}+C$
@@ -194,5 +194,109 @@ Theorem: Suppose $f(x)$ and $g(x)$ are differentiable on an open interval $I$ co
   \item $\lim_{x \to a}f(x) = \pm\infty$ and $\lim_{x \to a}g(x) = \pm\infty$
 \end{enumerate}
 then $\lim_{x \to a}\frac{f(x)}{g(x)} = \lim_{x \to a}\frac{f'(x)}{g'(x)}$. This is also true as $x \to \pm\infty, x \to a^+, x \to a^-$.
+
+\noindent
+\Large
+Basic Approaches to Integration\\
+\normalsize
+\begin{itemize}
+  \item {
+  Subtle Substitution\\
+  $\int\frac{dx}{x^{-1}+1}$\\
+  $=\int\frac{x}{x+1}dx$ and suppose $u = x + 1, x = u - 1, du = dx$\\
+  $=\int\frac{u-1}{u}du$\\
+  $=\int du - \int \frac{1}{u}du = u - \ln|u| + C$\\
+  $= x+1 - ln|x| + C$
+  }
+  \item {
+  Splitting Fractions\\
+  $\int\frac{2-3x}{\sqrt{1-x^2}}dx$\\
+  $=\int\frac{2}{\sqrt{1-x^2}}dx - \frac{3x}{\sqrt{1-x^2}}dx$\\
+  $=\int 2\sin^{-1}x - \frac{3x}{\sqrt{1-x^2}}dx$\\
+  etc...
+  }
+  \item {
+  Completing the Square\\
+  $\int\frac{dx}{\sqrt{27 - 6x - x^2}}$\\
+  $=\int\frac{dx}{\sqrt{-(x^2 +6x -27)}}$\\
+  $=\int\frac{dx}{\sqrt{-((x+3)^2 -36)}}$\\
+  $=\int\frac{dx}{\sqrt{36 - (x+3)^2}}$\\
+  $=\sin^{-1}(\frac{x+3}{6}) + C$\\
+  }
+  \item {
+  Multiplying by 1 (Using Conjugates)\\
+  $\int\frac{dx}{1 + \sin x}$ the conjugate of $1 + \sin x$ is $1 - \sin x$\\
+  $=\int\frac{dx (1 - \sin x)}{(1 + \sin x)(1 - \sin x)}$\\
+  $=\int\frac{1 - \sin x}{1 - \sin^2 x}dx$\\
+  $=\int\frac{1 - \sin x}{\cos^2 x}dx$\\
+  $=\int\frac{1}{\cos^2 x}dx - \int\frac{\sin x}{\cos^2 x}dx$\\
+  $=\int \sec^2 x dx - \int \tan x \sec x dx$\\
+  $=\tan x - \sec x + C$\\
+  }
+\end{itemize}
+
+\noindent
+\Large
+Integration by Parts\\
+\normalsize
+\indent
+Integration by Parts, or IBP, is used when integrating products of functions. It's not perfect, and can get messy if used incorrectly. The basic form is\\
+
+$\int{udv} = uv - \int{vdu}$\\
+
+Solve by substituting $u$ and $dv$, then using the right hand form.\\
+
+\noindent
+Example: $\int{t e^t dt}$
+\begin{enumerate}
+  \item Let $u = t$ and $dv = e^t dt$ so that $du = dt$ and $v = e^t$
+  \item $= t e^t - \int{e^t dt}$
+  \item $= t e^t - e^t + C$
+\end{enumerate}
+
+\noindent
+\Large
+Trigometetric Integrals\\
+\normalsize
+Products of sin and cos
+\begin{itemize}
+  \item If the power of sin or cos split off 1 factor and use $\sin^2x + \cos^2x = 1$\\
+  Example: $\int{\cos^3x dx} \to \int{\cos^2x \cos x} \to \int{(1-\sin^2x)\cos x dx}$
+  \item If the power of sin or cos is even, use a half-angle identity.\\
+  $\cos^2x = \frac{1 + \cos^2x}{2}$ and $\sin^2x = \frac{1 - \sin^2x}{2}$\\
+  Example: $\int{\sin^2x dx} = \int{\frac{1- \cos^2x}{2}dx}$\\
+  $= \int{\frac{1}{2}dx} - \int{\frac{1}{2}\cos^2x dx}$\\
+  $= \frac{x}{2} - \frac{1}{4}\sin 2x + C$
+\end{itemize}
+
+\noindent
+Products of of powers of sin and cos
+\begin{itemize}
+  \item If the power of sinx or cosx is odd, split off a factor and rewrite the resulting power in terms of the opposite, then use U-Substituion.
+\end{itemize}
+
+\noindent
+Powers of tan, sec, cot and csc
+\begin{itemize}
+  \item $\int{\sec^2x} = \tan x + C$
+  \item $\int{\tan^2x} = \int{\sec^2x + 1} = \tan x + x + C$
+  \item $\int{\csc^2x} = -\cot x + C$
+  \item $\int{\cot^2x} = \int{\csc^2x + 1} = -\cot x + x + C$
+\end{itemize}
+
+\noindent
+Products of Powers of tan and sec
+\begin{itemize}
+  \item If the power of sec is even, split $\sec^2$, rewrite in terms of tanx in terms of sec then use U-Sub on $\tan x$.\\
+  Example: $\int{\sec^2x\tan^{1/2}x dx}$\\
+  Let $u = \tan{x}$ and $du = \sec^2{x}$\\
+  $= \int{u^{1/2}du}$\\
+  $= \frac{2}{3}u^{3/2} + C$\\
+  \item If the power of tan is odd, split off secxtanx, rewrite remaining even power of tanx in terms of secx then use U-Sub on $\sec{x}$.\\
+  Example: $10\int{\tan^9{x}\sec^2{x}dx} = 10\int{\tan^8{x}\sec{x}\sec{x}\tan{x}dx}$\\
+  $= 10\int{(\sec^2{x} - 1)^4 \sec{x}\sec{x}\tan{x} dx}$\\
+  $u = \sec{x}$ and $du = \sec{x}\tan{x}dx$\\
+  $= 10\int{(u^2 - 1)^4 u du}$\\
+\end{itemize}
 
 \end{document}
