@@ -210,7 +210,16 @@ Other Circuits\\
   \item 2-Bit Decoder\\
     Uses 4 AND Gates with different inverter configurations on each. It maps 2 inputs to 4 outputs.
   \item Multiplexer\\
-    Uses 4 inputs and interprets to 1 output.
+  Uses 4 inputs and interprets to 1 output. A selector input of two wires will change the output from 4 AND Gates.
+  \item Full Adder\\
+    Capable of adding two bits with carry-in. Produces a one-bit sum with carry-out
 \end{itemize}
+
+\noindent
+\Large
+Logical Completeness\\
+\normalsize
+\indent
+Can complete any truth table with just AND, OR, NOT. First, mark every output row that has a truth value of true. Draw an OR gate at the bottom to accept all true outputs. Connect AND Gates to the OR Gate and have every input connect to each AND gate. For each AND Gate, configure the inputs with invertes so that each AND Gate emulates a truth table row.
 
 \end{document}

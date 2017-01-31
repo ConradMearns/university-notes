@@ -48,6 +48,14 @@ Elements\\
   \end{circuitikz}\\
   Provides a current dependant on some other voltage or current.
   }
+  \item {
+  Resistor\\
+  \begin{circuitikz}
+    \draw (0,0) to[resistor] (2,0);
+  \end{circuitikz}\\
+  Unit: Ohm ($\Omega$)\\
+  Absorbs power and follows Ohm's Law. $V = Ri$
+  }
 \end{enumerate}
 
 \noindent
@@ -124,5 +132,21 @@ Parallel Elements and Elements in Series\\
 \noindent
 Series $\equiv$ two elements are in series if they share 1 node and no other element is attached to that node. Elements in series always have the same current.\\
 Parallel $\equiv$ two elements are parallel if they share 2 nodes. Parallel elements have the same voltage.
+
+\noindent
+\Large
+Analyzing All-Series / Single Loop Circuits with Resistors\\
+\normalsize
+\begin{enumerate}
+  \item Label all elements with same current
+  \item Label Voltage across each element as variables
+  \item Calculate KVL for the loop
+  \item Calculate Ohm's Law for each resistor
+  \item Substitute Ohm's Law equation back into KVL equation
+  \item Modify the equation to solve for a single unknown (which is often the current)
+  \item Solve for the unknown
+  \item Use Ohm's Law to get voltages
+  \item Calculate power
+\end{enumerate}
 
 \end{document}
