@@ -222,4 +222,88 @@ Logical Completeness\\
 \indent
 Can complete any truth table with just AND, OR, NOT. First, mark every output row that has a truth value of true. Draw an OR gate at the bottom to accept all true outputs. Connect AND Gates to the OR Gate and have every input connect to each AND gate. For each AND Gate, configure the inputs with invertes so that each AND Gate emulates a truth table row.
 
+\noindent
+\Large
+Combinational vs Sequential Circuits\\
+\normalsize
+\noindent
+Combinational Circuit\\
+always produces the same output for a given set of inputs\\
+Sequential Circuit\\
+Stores information\\
+Output depends on stored information (state) plus input
+
+\noindent
+\Large
+R-S Latch\\
+\normalsize
+\noindent
+R is used to 'Reset' or clear the element - set it to zero.\\
+S is used to 'set' the element - set it to one.\\
+If both R and S are one, the output could be either one or zero. To assert one of the inputs, use Active Low Logic.\\
+
+\noindent
+\Large
+Gated D Latch\\
+\normalsize
+\noindent
+Based upon R-S Latch and has 2 inputs. D (for data) and WE (write enabled). Two AND gates feed into the R and S inputs of an R-S latch, and input is only sent to the R-S latch when WE is asserted.\\
+WE = 1 $\to$ latch is set to the value of D. S = NOT(D), R = D\\
+WE = 0 $\to$ latch holds previous value. S = R = 1\\
+
+\noindent
+\Large
+Register\\
+\normalsize
+\noindent
+Side by side Gated D latches that share a single WE line, but has seperate data lines.\\
+A register holds a n-bit value, controlled by a common WE.\\
+
+\noindent
+\Large
+Memory\\
+\normalsize
+\noindent
+Address is taken as multple inputs, that input passes to an address decoder which uses AND gates to specify what memory location can be written to, when WE is asserted.\\
+Not the most expensive, and more transistors are needed in greater desnity.\\
+Address decoder\\
+Word Select Line\\
+Word Write Enable
+
+\noindent
+\Large
+Representing Multi-bit Numbers\\
+\normalsize
+\noindent
+Number bits from right to left for convention. Use brackets to denote range.\\
+D[l:r] denotes bit l to bit r from left to right in register D\\
+May also see "A<14:9>"\\
+
+\noindent
+\Large
+State Machine\\
+\normalsize
+\noindent
+Finite State Machine with Datapath (FSMD)\\
+Controller / Data Path\\
+Another type of combinational logic with storage. It "Remembers" states and changes it's output(s) are based on inputs and the state machine's current state. This type of circuit is the heart of the controller in a CPU.\\
+
+Combinational vs Sequential: Combinational types depend only on the values. Sequential types sctrictly depend on the order of values inputted.
+
+The state of a system is a snapshot of all the relevant elements of the system at the moment the snapshot is taken.
+
+State diagrams are directed graphs that show how actions change states.
+
+\begin{enumerate}
+  \item A finite number of states
+  \item A finite number of external inputs
+  \item A finite number of external outputs
+  \item An explicit specification of all state transitions
+  \item An explicit specification of what determines each external value
+\end{enumerate}
+
+Clock cycles are used in digital circuits to trigger state transitions. A single cycle is when the value changes between '1' and '0' fully. Transitions can be triggered with edge triggered logic, or level triggered logic.
+
+Storage for state machines can be accomplished using a Master-Slave flipflop.
+
 \end{document}
