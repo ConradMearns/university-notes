@@ -306,4 +306,91 @@ Clock cycles are used in digital circuits to trigger state transitions. A single
 
 Storage for state machines can be accomplished using a Master-Slave flipflop.
 
+\noindent
+\Large
+From Logic to Datapath\\
+\normalsize
+\indent
+The datapath of a computer is all the logic used to process information.
+\begin{itemize}
+  \item Combinational Logic\\
+  Decoders -- convert instructions into control signals\\
+  Multiplexers -- select inputs and outputs\\
+  ALU (Arithmetic and Logic Unit) -- operations on data\\
+  \item Sequential Logic\\
+  State machine -- coordinate control signals and data movement\\
+  Registers and latches -- storage elements\\
+\end{itemize}
+
+\noindent
+\Large
+von Neumann Machine / Model
+\normalsize
+\noindent
+Basic structure of machine that is the most common, even today.\\
+a memory, containing instructions and data\\
+a processing unit, for preforming arithmetic and logical operations\\
+a control unit for interpreting instructions\\
+
+\noindent
+\Large
+Harvard Model
+\normalsize
+\noindent
+Refinement of von Neumann Model.\\
+seperate memory for programs and data\\
+
+Both models are sequential and synchronous. Programs are both interpreted by a control unit.
+
+\begin{itemize}
+  \item IR - Instruction Register
+  \item PC - Program Counter
+  \item ALU - Arithmetic and Logical Unit
+  \item MAR - Memory Address Register
+  \item MDR - Memory Data Register
+  \item PMEM - Program Memory (Harvard Model, effectively Read-Only)
+  \item DMEM - Data Memory (Harvard Model)
+\end{itemize}
+
+\noindent
+\Large
+Memory
+\normalsize
+\noindent
+$2^k * m$ array of stored bits.\\
+Address - unique k-bit identifier of location\\
+Contents - m-bit value stored in location\\
+
+Basic Operations:\\
+LOAD - Read a value from a memory location\\
+STORE - Write a value to a memory location\\
+
+\noindent
+\Large
+Interface to Memory
+\normalsize
+\noindent
+To LOAD a location (A)
+\begin{itemize}
+  \item Write the address (A) into the MAR
+  \item Send a 'read' signal to the memory
+  \item Read the data stored in MDR
+\end{itemize}
+
+To WRITE a value (X) to a location (A)
+\begin{itemize}
+  \item Write data (X) to the MDR
+  \item Write the address (A) to the MAR
+  \item send a 'write' signal to the memory
+\end{itemize}
+
+\noindent
+\Large
+Processing Unit
+\normalsize
+\noindent
+Functional Units - add, multiply, square root\\
+Registers - Small temp storage, operands and results of functional units\\
+Data Word Size - number of bits normally processed by ALU in one instruction. Also the width of registers\\
+
 \end{document}
