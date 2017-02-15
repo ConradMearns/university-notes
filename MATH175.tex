@@ -312,7 +312,7 @@ $a^2 - x^2$ by substituting $x = a\sin{\theta}$
 
 \noindent
 \Large
-Partial Functions
+Partial Functions\\
 \normalsize
 \indent
 Integrating rational functions is typically complicated. Often times they can be rewritten as if the function was created as a some of smaller rational functions. Suppose $\frac{x+2}{x^3 -3x^2 +2x}$. First rewrite the denominator so that each $x$ term can be solved.\\
@@ -326,5 +326,72 @@ $x=0 \to 2 = A(-2)(-1) + 0B(-1) + 0C(-2) \to 2 = 2A \to 1 = A$\\
 Therefor\\
 $=\frac{x+2}{x(x-2)(x-1)} = \frac{1}{x} + \frac{2}{x-2} + \frac{-3}{x-1}$\\
 
+\noindent
+\Large
+Partial Fraction Decomposition (PFD) - Irreducible Quadratic Factors\\
+\normalsize
+\indent
+The denomonator $d$ is a root of the quadratic function $f(x)$ in and only if $x-d$ is a factor of $f(x)$. Therefor $f(x)$ is irreducible when $b^2 - 4ac < 0$\\
+Example: $\int{\frac{x^2 + x + 2}{(x + 1)(x^2 + 1)}}dx$\\
+$x + 1$ and $x^2 + 1$ are irreducible so use PFD\\
+$\frac{x^2 + x + 2}{(x + 1)(x^2 + 1)} = \frac{A}{x+1} + \frac{Bx + C}{x^2 + 1}$\\
+$x^2 + x + 2 = A(x^2 + 1) + (Bx + C)(x + 1)$\\
+$x = -1 \to 2 = 2A \to 1 = A$\\
+$x^2 + x + 2 = x^2 + 1 + (Bx + C)(x + 1)$\\
+$x = 0 \to 2 = 1 + C \to 1 = C$\\
+$x^2 + x + 2 = x^2 + 1 + (Bx + 1)(x + 1)$\\
+$x + 2 = 1 + (Bx + 1)(x + 1)$\\
+$x + 2 = Bx^2 + Bx + x + 2$\\
+$0 = Bx^2 + Bx$\\
+$0 = B$\\
+Therefor $\int{\frac{x^2 + x + 2}{(x + 1)(x^2 + 1)}} = \int{\frac{1}{x + 1} + \frac{1}{x^2 + 1}}dx$\\
+
+\noindent
+\Large
+Numerical Integration\\
+\normalsize
+\indent
+There are three methods generally used to approximate definite integerals. All three rely on splitting the interval into smaller sub-regions whose area is more easliy found.
+
+For all three rules, use an arbitray $n$ value. Over the interval $[a, b]$, define $\delta x = \frac{b - a}{n}$\\
+Midpoint Rule\\
+$Area \approx \delta x (\sum_{k=1}^{n} f(\frac{x_{k-1} + x_k}{2}))$\\
+Trapezoid Rule\\
+$Area \approx \delta x [\frac{f(x)}{2} + (\sum_{k=1}^{n-1} f(x_k)) + \frac{f(x_n)}{2}]$\\
+Simpson's Rule\\
+$Area \approx \frac{\delta x}{3}(f(x_0) + 4f(x_1) + 2f(x_2) + ... + 4f(x_{n-1}) + f(x_n))$\\
+
+Denote usage of these rules - midpoint, trapezoid, and simpson's - with $n$ subintervals as following.\\
+$M(n) = \delta x(f(\frac{x_0 + x_1}{2}) + ... + f(\frac{x_{n-1} + x_n}{2}))$\\
+$T(n) = \delta x(\frac{1}{2} f(x_0) + f(x_1) + ... + f(x_{n-1}) + \frac{1}{2} f(x_n))$\\
+$S(n) = \frac{\delta x}{3}(f(x_0) + 4f(x_1) + 2f(x_2) + ... + 4f(x_{n-1}) + f(x_n))$\\
+
+\noindent
+\Large
+Numerical Integration Shortcuts\\
+\normalsize
+\indent
+$T(2n) = \frac{T(n) + M(n)}{2}$\\
+$S(2n) = \frac{4T(2n) - T(n)}{3}$\\
+
+\noindent
+\Large
+Errors in Approximating with Numerical Integration\\
+\normalsize
+\indent
+Let $E_M$ be the error using the midpoint rule over the interval $[a, b]$\\
+$E_M = \frac{k(b-a)}{24}(\delta x)^2$\\
+Let $E_T$ be the error using the trapezoid rule over the interval $[a, b]$\\
+$E_M = \frac{k(b-a)}{12}(\delta x)^2$\\
+Let $E_S$ be the error using Simpson's rule over the interval $[a, b]$\\
+$E_M = \frac{K(b-a)}{180}(\delta x)^4$\\
+
+\noindent
+\Large
+Sequences\\
+\normalsize
+\indent
+A sequence is an infinite list of numbers like $1, 2, 3, 4 ...$. We define sequences by patterns, forumlas, or recurrence relations.\\
+For example, $1, 2, 4, 8, 16, 32 ...$ has an explicit forumula of $A_n = 2^n$ for $n \geq 0$
 
 \end{document}

@@ -386,11 +386,74 @@ To WRITE a value (X) to a location (A)
 
 \noindent
 \Large
-Processing Unit
+Processing Unit\\
 \normalsize
 \noindent
 Functional Units - add, multiply, square root\\
 Registers - Small temp storage, operands and results of functional units\\
 Data Word Size - number of bits normally processed by ALU in one instruction. Also the width of registers\\
+
+\noindent
+\Large
+Input and Output\\
+\normalsize
+\noindent
+\begin{itemize}
+  \item Devices for getting data into and out of computer memory
+  \item Each device has its own interface, usually a set of registers like the memory's MAR and MDR
+  \item Some devices provide both input and output (disk, networking)
+  \item Programs that control access to a device is a driver
+\end{itemize}
+
+\noindent
+\Large
+Control Unit\\
+\normalsize
+\noindent
+\begin{itemize}
+  \item Instruction Register - IR - contains the current instruction
+  \item Program Counter - PC - contains the address of the next instruction to be executed
+  \item Control unit reads an instruction from memory. interprets the instruction, generating signals tha tell the other components what to do
+\end{itemize}
+
+\noindent
+\Large
+Instruction Processing - PNAMBC\\
+\normalsize
+\noindent
+PNAMBC $\to$ Pay No Attention to the Man Behind the Curtain
+\begin{itemize}
+  \item Fetch instruction from memory
+  \item Decode instruction
+  \item Evaluate address
+  \item Fetch operands from memory
+  \item Execute operation
+  \item Store result
+\end{itemize}
+Instructions are the fundemental unit of work. An instruction specifies opcode (what operation needs to be preformed) and operands (data/locations to be used in the operation). They are stored just like data, as a fixed length sequence of bits. The Control Unit interperats the instruction and generates a sequence of signals to carry out the action.
+
+A computer's instructions and their formats is known as it's Instruction Set Architecture (ISA)
+
+\noindent
+\Large
+AVR add instruction\\
+\normalsize
+\noindent
+Instruction format: 000011rdddddrrrr\\
+For this ISA, 000011 is the opcode for addition, and d is the 'destination register' and r is the 'source register'. The r and d is staggered for legacy reasons.
+
+Syntax: add Rd, Rr\\
+Example: "add r1, r3 ; add r3 to r1… bits are 0000110000010011"\\
+
+\noindent
+\Large
+AVR rjump (relative jump) instruction\\
+\normalsize
+\noindent
+Instruction format: 1100kkkkkkkkkkkk\\
+
+Syntax: rjump k\\
+Operation: PC = PC + k (after PC is already incremented) where $-2K \leq k \leq 2K$\\
+Example: "rjmp DoIt ; jmp to label DoIt… bits are 1100000011111111"\\
 
 \end{document}
