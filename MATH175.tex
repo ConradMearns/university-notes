@@ -392,6 +392,69 @@ Sequences\\
 \normalsize
 \indent
 A sequence is an infinite list of numbers like $1, 2, 3, 4 ...$. We define sequences by patterns, forumlas, or recurrence relations.\\
-For example, $1, 2, 4, 8, 16, 32 ...$ has an explicit forumula of $A_n = 2^n$ for $n \geq 0$
+For example, $1, 2, 4, 8, 16, 32 ...$ has an explicit forumula of $A_n = 2^n$ for $n \geq 0$\\
+The arbitrary sequence $(a_1, a_2, ...)$ is denoted as $(a_n)_{n=1}$ or just $a_n$. Thus\\
+$(1, 2, 3, 4, ...) = (n)$\\
+$(1, 2, 4, 8, 16, ...) = (2^{n-1})$\\
+Recurrence relations can also define a sequence.\\
+$a_1 = 1$ and $a_n = 2a_{n-1}$ for $n \geq 2$ gives us $1, 2, 4, 8, ...$\\
+Theorem: Let $f$ be a function with $f(n) = a_n$ for all positive integer values of $n$. If $\lim_{n \to \infty} f(n) = L$ then $\lim_{n \to \infty} a_n = L$\\
+If $\lim_{n \to \infty} a_n = L$ then $a_n$ converges to $L$ and we write $(a_n) \to L$\\
+We can then define the following to be true
+\begin{itemize}
+  \item If $a_n \to A$ and $b_n \to B$ then $a_n \pm b_n \to A \pm B$
+  \item $ca_n \to cA$
+  \item $a_n * b_n \to AB$
+  \item $\frac{a_n}{b_n} \to \frac{A}{B}$
+\end{itemize}
+
+We also define the following terms as follows
+\begin{itemize}
+  \item $a_n$ is increasing if $a_{n+1} \geq a_n$ for all $n$
+  \item $a_n$ is decreasing if $a_{n+1} \leq a_n$ for all $n$
+  \item $a_n$ is monotonic if $a_{n+1}$ is either increasing or decreasing
+  \item $a_n$ is bounded if there is a number $M$ such that $|a_n| \leq M$ for all $n$
+\end{itemize}
+
+Theorem: Bounded monotonic sequences converge\\
+Let $M$ be the smallest bound. If $(a_n)$ goes in one direction and is bounded by $M$ then $(a_n)$ will approach but never reach $M$ as $n \to \infty$
+
+\noindent
+\Large
+Geometric Sequences\\
+\normalsize
+\indent
+A Geometric Sequence is any sequence of the form $(a * r^n)$ where $a$ and $r$ are numbers. If $(a * r^n)$ converges, $a$ is not needed to evaluate the bound (given by limit laws).
+\begin{itemize}
+  \item If $(r^n) \to L$ then $(a * r^n) \to aL$
+  \item If $(a* r^n) \to M$ then $(\frac{1}{a} * r^n) \to \frac{M}{a}$
+\end{itemize}
+
+Definition: We say some property $P(n)$ holds eventually if there is an integer $k$ such that $P(n)$ holds true for all $n \geq k$\\
+Therefor eventually $a_n \geq k$ if $(a_n) = (n)$
+
+\noindent
+\Large
+Squeeze Theorem\\
+\normalsize
+\indent
+An (infinite) series is an infinite sum of numbers\\
+$a_1 + a_2 + a_3 + ... = \sum_{k=1}^{\infty} a_k$\\
+$\sum_{k=1}^{\infty} a_k = \lim_{n \to \infty}\sum_{k=1}^{n} a_k = (a_1 + a_2 + a_3 + ...)$\\
+Denote $\sum_{k=1}^{n} a_k$ by $S_n$ which is called the nth partial.
+\begin{itemize}
+  \item $S_1 = a_1$
+  \item $S_2 = a_1 + a_2$
+  \item $...$
+  \item $S_n = a_1 + a_2 + ... + a_n$
+\end{itemize}
+
+We define the limit of $\sum_{k=1}^{\infty}a_k$ to be $\lim_{n \to \infty}S_n = \sum_{k=1}^{n}a_k$\\
+If $\lim_{n \to \infty}(S_n) = L$ we write $\sum_{k=1}^{\infty}a_k = L$\\
+If $L$ exists then $\sum_{k=1}^{\infty} a_k$ converges. If not, $\sum_{k=1}^{\infty}a_k$ diverges.
+
+If $(a_n) = (c)$ then $S_n = nc$ so $S_n \to \infty$ which means non-monotonic sequences cannot produce converging series. To have a converging series given a sequence, $(a_n) \to 0$ must be true and it must converge quickly.\\
+Example: $\sum_{k=1}^{\infty}\frac{1}{n}$ diverges only because it is not quick enough.
+
 
 \end{document}
