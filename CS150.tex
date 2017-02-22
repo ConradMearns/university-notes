@@ -11,9 +11,7 @@
 
 \maketitle
 
-\noindent
-\Large Turing Machines
-\normalsize
+\section{Turing Machines}
 \begin{enumerate}
   \item {Turing's Thesis: Every computation can be represented with a Turing Machine.}
   \item {Turing Machine: A mathematical model of a device that can preform any computation.}
@@ -22,10 +20,7 @@
 
 Beyond models, real world constraints include time, financial cost, power, security, thermal dissapation, space, etc.\\
 
-\noindent
-\Large Bits, Data Types, and Operators\\
-\normalsize
-\indent
+\section{Bits, Data Types, and Operators}
 The electro-magnetic field is not digital, yet all of modern computing is represented digitally. To compromise, 0 is a representation of the absence of voltage and 1 is a representation of the presence of voltage.
 
 \centering
@@ -39,11 +34,7 @@ The electro-magnetic field is not digital, yet all of modern computing is repres
 \end{tikzpicture}
 \raggedright
 
-\noindent
-\Large
-Signed Binary Arithmetic\\
-\normalsize
-\indent
+\section{Signed Binary Arithmetic}
 Binary, without the addition of extra mathematical symbols, can only represent positive whole integers. Signed numbers like $-5$ require a formal system of representation in order to be used. A binary number can represent $2^n$ values for $n$ bits. The objective of signed numbers is to partition half of those values for negative number representation ($-2^{n-1}-1 \to -1$) and the other half to positive numbers ($1 \to 2^{n-1}$) while leaving zero and potentially one other number available.
 
 \begin{enumerate}
@@ -64,11 +55,7 @@ Binary, without the addition of extra mathematical symbols, can only represent p
   }
 \end{enumerate}
 
-\noindent
-\Large
-Arithmetic and Logical Operations\\
-\normalsize
-\noindent
+\section{Arithmetic and Logical Operations}
 Arithmetic operations
 \begin{enumerate}
   \item {Addition\\Just addition, regardless if signed or not. Ignore the final carry-out.}
@@ -76,16 +63,13 @@ Arithmetic operations
   \item {Sign Extension\\To add numbers, they must have the same number of bits. This is because of signed numbers, and storage.}
 \end{enumerate}
 
-\noindent
 Overflow occurs when
 \begin{enumerate}
   \item Signs of the operands are the same
   \item The sign of the sum is different
 \end{enumerate}
-\noindent
 The issue can be tested for by examining the most significant bit's sign between the operands and the result.
 
-\noindent
 Logical operations
 \begin{enumerate}
   \item {AND\\The result is true if and only if both operands are true.\\Useful for clearing bits, a mask of 1's signify keep.}
@@ -95,22 +79,14 @@ Logical operations
 \noindent
 Each operation is executed on each bit individually.
 
-\noindent
-\Large
-Fractions, Floating, and Fixed-Point Values\\
-\normalsize
-\indent
+\section{Fractions, Floating, and Fixed-Point Values}
 A "binary" point is abstractly added to the value. To the left of the point, each bit is worth is $2^{-n}$ where n is the place left of the point. For example, $101.11$.
 
 For large numbers, we use scientific notation. $Sign * (Fraction * 2^{Exponent})$
 IEEE 754 Floating Point Standard for 32-bits signifies 1 bit for sign, 8 bits for the exponenant, and 23 bits for the fraction.
 $1-01111110-10000000000000000000000 = -1.5*2^{???}$
 
-\noindent
-\Large
-Other Date Types
-\normalsize
-\indent
+\section{Other Date Types}
 \begin{enumerate}
   \item Single characters use ASCII to map 128 characters to 7-bit code.
   \item Text strings are sequences of characters often with a NULL to terminate. No hardware support.
@@ -119,16 +95,11 @@ Other Date Types
   \item Other data types my be defined abstractly by us and interpreted as needed.
 \end{enumerate}
 
-\noindent
-\Large
-Transistors\\
-\normalsize
-\indent
+\section{Transistors}
 Each transistor is a digital switch. When combined in different circuits, transitor combinations can emulate certain logical operations such as AND, OR, and NOT. These can then be combined to create adders, multiplexers, decoders, and other farther complex structures.\\
 Gordon Moore, an early founder of Intel, hypothesized that transistor count would double every two years. This is now known as Moore's Law.\\
 Transitors have 3 wells. A well is a homogeneous material that is either more or less positive than negative. A negative well is denoted $n$ and a positive well is denoted $p$. The gate in a transitor creates a field to allow or dissallow charge to migrate across wells.
 
-\noindent
 n-Type Transistor (npn)\\
 Two $n$ wells inside a large $p$ substrate.
 \begin{itemize}
@@ -140,7 +111,6 @@ Two $n$ wells inside a large $p$ substrate.
     '1 state'
 \end{itemize}
 
-\noindent
 p-Type Transistor (pnp)\\
 Two $p$ wells inside a large $n$ substrate.
 \begin{itemize}
@@ -152,10 +122,7 @@ Two $p$ wells inside a large $n$ substrate.
     '0 state'
 \end{itemize}
 
-\noindent
-\Large
-Complementary Metal Oxide Semiconductor Circuits(CMOS)\\
-\normalsize
+\section{Complementary Metal Oxide Semiconductor Circuits(CMOS)}
 \begin{itemize}
   \item NOT Gate (Inverter)
   \item NOR Gate (NOT OR, Serial on top, Parallel on bottom)
@@ -164,11 +131,7 @@ Complementary Metal Oxide Semiconductor Circuits(CMOS)\\
   \item AND Gate (NAND + NOT)
 \end{itemize}
 
-\noindent
-\Large
-Simplified Gates\\
-\normalsize
-
+\section{Simplified Gates}
 \begin{itemize}
   \item {
   NOT Gate\\
@@ -202,10 +165,7 @@ Simplified Gates\\
   }
 \end{itemize}
 
-\noindent
-\Large
-Other Circuits\\
-\normalsize
+\section{Other Circuits}
 \begin{itemize}
   \item 2-Bit Decoder\\
     Uses 4 AND Gates with different inverter configurations on each. It maps 2 inputs to 4 outputs.
@@ -215,75 +175,43 @@ Other Circuits\\
     Capable of adding two bits with carry-in. Produces a one-bit sum with carry-out
 \end{itemize}
 
-\noindent
-\Large
-Logical Completeness\\
-\normalsize
-\indent
+\section{Logical Completeness}
 Can complete any truth table with just AND, OR, NOT. First, mark every output row that has a truth value of true. Draw an OR gate at the bottom to accept all true outputs. Connect AND Gates to the OR Gate and have every input connect to each AND gate. For each AND Gate, configure the inputs with invertes so that each AND Gate emulates a truth table row.
 
-\noindent
-\Large
-Combinational vs Sequential Circuits\\
-\normalsize
-\noindent
+\section{Combinational vs Sequential Circuits}
 Combinational Circuit\\
 always produces the same output for a given set of inputs\\
 Sequential Circuit\\
 Stores information\\
 Output depends on stored information (state) plus input
 
-\noindent
-\Large
-R-S Latch\\
-\normalsize
-\noindent
+\section{R-S Latch}
 R is used to 'Reset' or clear the element - set it to zero.\\
 S is used to 'set' the element - set it to one.\\
 If both R and S are one, the output could be either one or zero. To assert one of the inputs, use Active Low Logic.\\
 
-\noindent
-\Large
-Gated D Latch\\
-\normalsize
-\noindent
+\section{Gated D Latch}
 Based upon R-S Latch and has 2 inputs. D (for data) and WE (write enabled). Two AND gates feed into the R and S inputs of an R-S latch, and input is only sent to the R-S latch when WE is asserted.\\
 WE = 1 $\to$ latch is set to the value of D. S = NOT(D), R = D\\
 WE = 0 $\to$ latch holds previous value. S = R = 1\\
 
-\noindent
-\Large
-Register\\
-\normalsize
-\noindent
+\section{Register}
 Side by side Gated D latches that share a single WE line, but has seperate data lines.\\
 A register holds a n-bit value, controlled by a common WE.\\
 
-\noindent
-\Large
-Memory\\
-\normalsize
-\noindent
+\section{Memory}
 Address is taken as multple inputs, that input passes to an address decoder which uses AND gates to specify what memory location can be written to, when WE is asserted.\\
 Not the most expensive, and more transistors are needed in greater desnity.\\
 Address decoder\\
 Word Select Line\\
 Word Write Enable
 
-\noindent
-\Large
-Representing Multi-bit Numbers\\
-\normalsize
-\noindent
+\section{Representing Multi-bit Numbers}
 Number bits from right to left for convention. Use brackets to denote range.\\
 D[l:r] denotes bit l to bit r from left to right in register D\\
 May also see "A<14:9>"\\
 
-\noindent
-\Large
-State Machine\\
-\normalsize
-\noindent
+\section{State Machine}
 Finite State Machine with Datapath (FSMD)\\
 Controller / Data Path\\
 Another type of combinational logic with storage. It "Remembers" states and changes it's output(s) are based on inputs and the state machine's current state. This type of circuit is the heart of the controller in a CPU.\\
@@ -306,11 +234,7 @@ Clock cycles are used in digital circuits to trigger state transitions. A single
 
 Storage for state machines can be accomplished using a Master-Slave flipflop.
 
-\noindent
-\Large
-From Logic to Datapath\\
-\normalsize
-\indent
+\section{From Logic to Datapath}
 The datapath of a computer is all the logic used to process information.
 \begin{itemize}
   \item Combinational Logic\\
@@ -322,21 +246,13 @@ The datapath of a computer is all the logic used to process information.
   Registers and latches -- storage elements\\
 \end{itemize}
 
-\noindent
-\Large
-von Neumann Machine / Model
-\normalsize
-\noindent
+\section{von Neumann Machine / Model}
 Basic structure of machine that is the most common, even today.\\
 a memory, containing instructions and data\\
 a processing unit, for preforming arithmetic and logical operations\\
 a control unit for interpreting instructions\\
 
-\noindent
-\Large
-Harvard Model
-\normalsize
-\noindent
+\section{Harvard Model}
 Refinement of von Neumann Model.\\
 seperate memory for programs and data\\
 
@@ -352,11 +268,7 @@ Both models are sequential and synchronous. Programs are both interpreted by a c
   \item DMEM - Data Memory (Harvard Model)
 \end{itemize}
 
-\noindent
-\Large
-Memory
-\normalsize
-\noindent
+\section{Memory}
 $2^k * m$ array of stored bits.\\
 Address - unique k-bit identifier of location\\
 Contents - m-bit value stored in location\\
@@ -365,11 +277,7 @@ Basic Operations:\\
 LOAD - Read a value from a memory location\\
 STORE - Write a value to a memory location\\
 
-\noindent
-\Large
-Interface to Memory
-\normalsize
-\noindent
+\section{Interface to Memory}
 To LOAD a location (A)
 \begin{itemize}
   \item Write the address (A) into the MAR
@@ -384,20 +292,12 @@ To WRITE a value (X) to a location (A)
   \item send a 'write' signal to the memory
 \end{itemize}
 
-\noindent
-\Large
-Processing Unit\\
-\normalsize
-\noindent
+\section{Processing Unit}
 Functional Units - add, multiply, square root\\
 Registers - Small temp storage, operands and results of functional units\\
 Data Word Size - number of bits normally processed by ALU in one instruction. Also the width of registers\\
 
-\noindent
-\Large
-Input and Output\\
-\normalsize
-\noindent
+\section{Input and Output}
 \begin{itemize}
   \item Devices for getting data into and out of computer memory
   \item Each device has its own interface, usually a set of registers like the memory's MAR and MDR
@@ -405,22 +305,14 @@ Input and Output\\
   \item Programs that control access to a device is a driver
 \end{itemize}
 
-\noindent
-\Large
-Control Unit\\
-\normalsize
-\noindent
+\section{Control Unit}
 \begin{itemize}
   \item Instruction Register - IR - contains the current instruction
   \item Program Counter - PC - contains the address of the next instruction to be executed
   \item Control unit reads an instruction from memory. interprets the instruction, generating signals tha tell the other components what to do
 \end{itemize}
 
-\noindent
-\Large
-Instruction Processing - PNAMBC\\
-\normalsize
-\noindent
+\section{Instruction Processing - PNAMBC}
 PNAMBC $\to$ Pay No Attention to the Man Behind the Curtain
 \begin{itemize}
   \item Fetch instruction from memory
@@ -434,22 +326,14 @@ Instructions are the fundemental unit of work. An instruction specifies opcode (
 
 A computer's instructions and their formats is known as it's Instruction Set Architecture (ISA)
 
-\noindent
-\Large
-AVR add instruction\\
-\normalsize
-\noindent
+\section{AVR add instruction}
 Instruction format: 000011rdddddrrrr\\
 For this ISA, 000011 is the opcode for addition, and d is the 'destination register' and r is the 'source register'. The r and d is staggered for legacy reasons.
 
 Syntax: add Rd, Rr\\
 Example: "add r1, r3 ; add r3 to r1… bits are 0000110000010011"\\
 
-\noindent
-\Large
-AVR rjump (relative jump) instruction\\
-\normalsize
-\noindent
+\section{AVR add instruction}
 Instruction format: 1100kkkkkkkkkkkk\\
 
 Syntax: rjump k\\
