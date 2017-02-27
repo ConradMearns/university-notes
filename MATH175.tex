@@ -386,11 +386,7 @@ $E_M = \frac{k(b-a)}{12}(\delta x)^2$\\
 Let $E_S$ be the error using Simpson's rule over the interval $[a, b]$\\
 $E_M = \frac{K(b-a)}{180}(\delta x)^4$\\
 
-\noindent
-\Large
-Sequences\\
-\normalsize
-\indent
+\section{Sequences}
 A sequence is an infinite list of numbers like $1, 2, 3, 4 ...$. We define sequences by patterns, forumlas, or recurrence relations.\\
 For example, $1, 2, 4, 8, 16, 32 ...$ has an explicit forumula of $A_n = 2^n$ for $n \geq 0$\\
 The arbitrary sequence $(a_1, a_2, ...)$ is denoted as $(a_n)_{n=1}$ or just $a_n$. Thus\\
@@ -419,11 +415,7 @@ We also define the following terms as follows
 Theorem: Bounded monotonic sequences converge\\
 Let $M$ be the smallest bound. If $(a_n)$ goes in one direction and is bounded by $M$ then $(a_n)$ will approach but never reach $M$ as $n \to \infty$
 
-\noindent
-\Large
-Geometric Sequences\\
-\normalsize
-\indent
+\section{Geometric Sequences}
 A Geometric Sequence is any sequence of the form $(a * r^n)$ where $a$ and $r$ are numbers. If $(a * r^n)$ converges, $a$ is not needed to evaluate the bound (given by limit laws).
 \begin{itemize}
   \item If $(r^n) \to L$ then $(a * r^n) \to aL$
@@ -433,11 +425,9 @@ A Geometric Sequence is any sequence of the form $(a * r^n)$ where $a$ and $r$ a
 Definition: We say some property $P(n)$ holds eventually if there is an integer $k$ such that $P(n)$ holds true for all $n \geq k$\\
 Therefor eventually $a_n \geq k$ if $(a_n) = (n)$
 
-\noindent
-\Large
-Squeeze Theorem\\
-\normalsize
-\indent
+Theorem: Let $a \neq 0$ nd $r$ be numbers. If $|r| < 1$ then $\sum_{k = 0}^{\infty} ar^k = \frac{a}{1-r}$. If $|r| \geq 1$ then $\sum_{k = 0}^{\infty} ar^k$ diverges.
+
+\section{Squeeze Theorem}
 An (infinite) series is an infinite sum of numbers\\
 $a_1 + a_2 + a_3 + ... = \sum_{k=1}^{\infty} a_k$\\
 $\sum_{k=1}^{\infty} a_k = \lim_{n \to \infty}\sum_{k=1}^{n} a_k = (a_1 + a_2 + a_3 + ...)$\\
@@ -455,6 +445,5 @@ If $L$ exists then $\sum_{k=1}^{\infty} a_k$ converges. If not, $\sum_{k=1}^{\in
 
 If $(a_n) = (c)$ then $S_n = nc$ so $S_n \to \infty$ which means non-monotonic sequences cannot produce converging series. To have a converging series given a sequence, $(a_n) \to 0$ must be true and it must converge quickly.\\
 Example: $\sum_{k=1}^{\infty}\frac{1}{n}$ diverges only because it is not quick enough.
-
 
 \end{document}

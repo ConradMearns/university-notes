@@ -333,11 +333,32 @@ For this ISA, 000011 is the opcode for addition, and d is the 'destination regis
 Syntax: add Rd, Rr\\
 Example: "add r1, r3 ; add r3 to r1… bits are 0000110000010011"\\
 
-\section{AVR add instruction}
+\section{AVR rjump instruction (Relative Jump)}
 Instruction format: 1100kkkkkkkkkkkk\\
 
-Syntax: rjump k\\
+Syntax: rjump k $-2K \leq k < 2K$\\
 Operation: PC = PC + k (after PC is already incremented) where $-2K \leq k \leq 2K$\\
 Example: "rjmp DoIt ; jmp to label DoIt… bits are 1100000011111111"\\
+
+\section{Instruction Processing}
+
+\begin{itemize}
+  \item {FETCH:
+    \begin{itemize}
+      \item Load next instruction from the address stored at the program counter (PC) and place into the instruction register (IR)\\
+      Copy contents of PC to PMAR (Program Memory Address Register)\\
+      Send "read" to memory\\
+      Copy PMDR (Program Memory Data Register) contents to IR
+      \item Increment the PC so that it points to the next instruction
+    \end{itemize}
+  }
+  \item {DECODE:
+    \begin{itemize}
+      \item Identify the opcode\\
+        For the AVR ADD instrution, this is bits [15:10]
+      \item Depending on the opcode, identify the other operands from the remaining bits
+    \end{itemize}
+  }
+\end{itemize}
 
 \end{document}
