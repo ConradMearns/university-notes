@@ -326,14 +326,21 @@ Instructions are the fundemental unit of work. An instruction specifies opcode (
 
 A computer's instructions and their formats is known as it's Instruction Set Architecture (ISA)
 
-\section{AVR add instruction}
+\section{Types of Instructions}
+\begin{itemize}
+  \item Computational instructions (ADD, AND, etc)
+  \item Data movement instructions (LD, ST, etc)
+  \item Control instructions (JMP, BRxx, etc)
+\end{itemize}
+
+\subsection{AVR add instruction}
 Instruction format: 000011rdddddrrrr\\
 For this ISA, 000011 is the opcode for addition, and d is the 'destination register' and r is the 'source register'. The r and d is staggered for legacy reasons.
 
 Syntax: add Rd, Rr\\
 Example: "add r1, r3 ; add r3 to r1… bits are 0000110000010011"\\
 
-\section{AVR rjump instruction (Relative Jump)}
+\subsection{AVR rjump instruction (Relative Jump)}
 Instruction format: 1100kkkkkkkkkkkk\\
 
 Syntax: rjump k $-2K \leq k < 2K$\\
@@ -341,7 +348,6 @@ Operation: PC = PC + k (after PC is already incremented) where $-2K \leq k \leq 
 Example: "rjmp DoIt ; jmp to label DoIt… bits are 1100000011111111"\\
 
 \section{Instruction Processing}
-
 \begin{itemize}
   \item {FETCH:
     \begin{itemize}
@@ -359,6 +365,33 @@ Example: "rjmp DoIt ; jmp to label DoIt… bits are 1100000011111111"\\
       \item Depending on the opcode, identify the other operands from the remaining bits
     \end{itemize}
   }
+  \item {EVALUATE ADDRESS:
+    \begin{itemize}
+      \item
+    \end{itemize}
+  }
 \end{itemize}
+
+\section{Assembly Language}
+Nothing but human readable machine code. Assembly gives a way to easily convert between symbols and machine code.\\
+An assembler is a program that makes such a conversion. Assemblers are very specific to ISA. Because of this, there is a very close relationship between symbols and instruction sets. This means opcodes are mnemonics specific to an ISA. Using assembly we can label locations in memory to prevent hassles with program location.
+
+Some instructions can only be preformed on specific registers.
+
+\subsection{Syntax}
+\begin{itemize}
+  \item Comments: line begins with a semi-colon\\
+  ";This is a comment"
+  \item Labels: not a instruction, but a tag within the code that defines a location. In AVR, labels end with a colon\\
+  "mylabel:"
+  \item Assembler Directive: specifies the origin of the next instruction within memory\\
+  ".org 0x100" - this means the next instruction will be at location 0x100
+  \item Instruction: can be different per instruction. Generally organized to have a text mnemonic followed by comma sperated values in the form of labels, registers, and numbers.\\
+  "ldi r16, 6" - Load the value '6' into register 16
+\end{itemize}
+
+
+
+
 
 \end{document}

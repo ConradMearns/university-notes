@@ -8,3 +8,6 @@ The purpose of this index is to provide [myself](http://conrads.website "Hi, I'm
 + ([MATH175](MATH175.pdf)) Analytical Geometry and Calculus II
 + ([POLS101](POLS101.pdf)) Introduction to Political Science and American Government
 + ([ECE101](ECE101.pdf)) Foundations of Electrical and Computer Engineering
+
+## Other Courses
++ [Introduction to Leadership in Residence](Residence.pdf) (Spring 2017)
