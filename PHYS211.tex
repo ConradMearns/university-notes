@@ -91,10 +91,42 @@ Position: $\vec{r}(t) = r\cos{\frac{2\pi r}{T}}\hat{i} + r\sin{\frac{2\pi r}{T}}
 Velocity (derivative of position): $\vec{v}(t) = -r\frac{2\pi}{T}\sin{\frac{2\pi r}{T}}\hat{i} + r\frac{2\pi}{T}\cos{\frac{2\pi r}{T}}\hat{j}$\\
 Acceleration (derivative of velocity): $\vec{a}(t) = -r\frac{4\pi^2}{T^2}\cos{\frac{2\pi r}{T}}\hat{i} - r\frac{4\pi^2}{T^2}\sin{\frac{2\pi r}{T}}\hat{j}$\\
 Or\\
-$\vec{a}_{centrip} = -\frac{v^2}{r}\hat{r}$
+$\vec{a}_{c} = \frac{v^2}{r}\hat{r}$\\
+Angular velocity can also be defined in terms of angular momentum ($\omega$): $\vec{a}_{c} = r{\omega}^2$
 
 \section{Relativity}
 Motion and position are dependant on a specific inertial reference frame - some body with no apparent acceleration. It was believed by Aristotle that the Earth was the reference frame for everything, i.e. it was the center of the universe. A reference frame is represented mathematically as the origin.\\
 All motion and laws of motion must work and provide the same result across refernce frames. Using this fact, you can calculate the time it takes for an arrow to hit a wall when the reference frame is the archer, and come out with the same result when the wall hits the arrow when the arrow is the reference frame.
+
+\section{Forces}
+Forces can be given / found a variety of different ways. It is important to note first how these forces act on bodies. The intuitive definition of a force is that they are "pushes" or "pulls" that change the motion and position of bodies. Each force has a scalar and vector component, mass and a vector acceleration.
+
+\subsection{Variables used in Forces}
+\begin{itemize}
+  \item $m$: the mass of an object in kilograms.
+  \item $\vec{g}$: the gravitational constant.
+  \item $\mu_s$: coeffecient of static friction. (Between 0 and 1)
+  \item $\mu_k$: coeffecient of kinetic friction. (Between 0 and 1)
+  \item $C$: drag coeffecient
+  \item $\rho$: fluid density
+  \item $A$: cross sectional area
+\end{itemize}
+
+\subsection{Common Forces}
+The final, or net force, on an object is given by the summation of all relevant forces. $F_{net} = \sum F_n$
+\begin{itemize}
+  \item External Forces: any force that is added to a system but did not originate there. $\vec{F}_n$ where $n$ is arbitrary to help define and organize many forces. Thus, $n$ can be a number, name, or replaced with one of the following internal forces.
+  \item Weight: Force given from gravity. Points towards down in the vertical dimension. $\vec{w} = m\vec{g}$
+  \item Normal: The observered force that prevents boxes from falling through tables. The x component of this vector is typically to $|\vec{g}|$. The normal force is always perpendicular to the surface an object sits on. $\vec{N} = -m\vec{g}$
+  \item Tension: A pulling force that often conteracts gravity. $\vec{T} = \vec{w} = m\vec{g}$
+  \item Friction: Other forces on an object must cause the static frition inequality to be false in order for an object to be displaced. Once this threshold is met, friction force travels parallel to the surface and opposite of motion.\\
+  Static: given by $\vec{f}_s \leq \mu_s\vec{N}$. This implies that static friction cannot exceed the maximum. $\vec{f}_s(max) = \mu_s\vec{N}$.\\
+  Kinetic: given by $\vec{f}_k = \mu_k\vec{N}$.
+  Centripetal: the "center-seeking" force. $F_c = m\frac{\vec{v}^2}{r} = mr\vec{\omega}^2$
+  Drag: a force proportional to speed ($F_D \propto v^2$) that is gained when fluids reduce speed (like falling through air). $F_D = \frac{1}{2}C\rho Av^2$
+\end{itemize}
+
+\section{Terminal Velocity}
+$F_{net} = mg - F_D = ma = 0$ thus $mg = F_D$. Using the equation for drag, we get $mg = \frac{1}{2}C\rho Av^2$. Solving for terminal velocity gives us $v_T = \sqrt{\frac{2mg}{\rho CA}}$.
 
 \end{document}
