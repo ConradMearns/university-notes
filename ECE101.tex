@@ -154,4 +154,36 @@ When given a resistor with voltage, resistance and current, etc...
   \item Use one the solved unknown for the next step
 \end{itemize}
 
+\section{Series and Parallel Resistors}
+\subsection{Series}
+Resistors that are in series can be redrawn into a single new resistor $R_{eq}$ where $R_{eq} = \sum R_n$.
+For example, the two circuits are equivalent.\\
+\begin{circuitikz}
+  \draw (0,0) to[resistor, l_=$R_1$] (2,0)
+  (2,0) to[resistor, l_=$R_2$] (4,0)
+  (4,0) to[resistor, l_=$R_3$] (6,0);
+\end{circuitikz}
+
+\begin{circuitikz}
+  \draw (0,0) to[resistor, l_=$R_{eq}$] (2,0);
+\end{circuitikz}\\
+where $R_{eq} = R_1 + R_2 + R_3$.
+
+\subsection{Parallel}
+Resistors that are parallel can be redrawn into a single new resistor $R_{eq}$ where $\frac{1}{R_{eq}} = \sum \frac{1}{R_n}$.
+For example, the two circuits are equivalent.\\
+\begin{circuitikz}
+  \draw (0,0) to[resistor, l_=$R_1$] (0,2)
+  (2,0) to[resistor, l_=$R_2$] (2,2)
+  (4,0) to[resistor, l_=$R_3$] (4,2)
+  (0,0) -- (4,0)
+  (0,2) -- (4,2);
+\end{circuitikz}
+
+\begin{circuitikz}
+  \draw (0,0) to[resistor, l_=$R_{eq}$] (0,2);
+\end{circuitikz}
+where $R_{eq} = \frac{1}{\frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3}}$.
+
+
 \end{document}

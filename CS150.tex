@@ -379,18 +379,70 @@ An assembler is a program that makes such a conversion. Assemblers are very spec
 Some instructions can only be preformed on specific registers.
 
 \subsection{Syntax}
+LABEL OPCODE OPERANDS ; COMMENTS (where the label and comment are optional)
 \begin{itemize}
-  \item Comments: line begins with a semi-colon\\
+  \item Comments: begin with a semi-colon\\
   ";This is a comment"
   \item Labels: not a instruction, but a tag within the code that defines a location. In AVR, labels end with a colon\\
   "mylabel:"
   \item Assembler Directive: specifies the origin of the next instruction within memory\\
   ".org 0x100" - this means the next instruction will be at location 0x100
-  \item Instruction: can be different per instruction. Generally organized to have a text mnemonic followed by comma sperated values in the form of labels, registers, and numbers.\\
+  \item Opcode: can be different per instruction. Generally organized to have a text mnemonic followed by comma sperated values in the form of labels, registers, and numbers.\\
   "ldi r16, 6" - Load the value '6' into register 16
+  \item Operands: registers, numbers, labels.\\
+  Registers have the format r1, r13, fXX.\\
+  Numbers can be decimal X or hex 0xX.\\
+  Labels are just text, in the format XXXXX
+  \item Directives: pseudo-operations used only by the assembler. Start with a '.'\\
+  .ORG [address] - Starting address of next instruction in PMEM\\
+  .BYTE [expressions] - Place bytes from expressions in code\\
+  .SET [symbol, expression] - Set the value of a symbol to an expression\\
+  .FILL [repeat, size, value] - allocate one word, init with a value\\
+  .SECTION [section name] - Place following code into the section name's location
 \end{itemize}
 
+\section{Register Transfer Language (RTL)}
+FETCH\\
+$PMAR \Leftarrow PC$\\
+$Assert READ of PMEM$\\
+$PMDR \Leftarrow PMEM[PMAR]$\\
+$IR \Leftarrow PMDR$\\
+$PC \Leftarrow PC + 1$
 
+\section{Assembly Process}
+Convert's assembly files (.asm) to executables (.hex) for the AVR.
+
+First Pass
+\begin{itemize}
+  \item Scan assembly file
+  \item find all labels and calculate corresponding addresses (symbol table)
+\end{itemize}
+
+Second Pass
+\begin{itemize}
+  \item Convert instructions to machine code using information from the symbol table
+\end{itemize}
+
+\subsection{Constructing a Symbol Table}
+\begin{enumerate}
+  \item Initialize the location counter (LC) which keeps track of the address of the current instruction
+  \item For each non-empty line in the program:
+  \begin{enumerate}
+    \item If the line contains a label, add label and LC to symbol table
+    \item Increment LC (If .FILL or .BYTE is used, increment LC by the number of words allocated)
+  \end{enumerate}
+  \item Stop construction when end of file is reached.
+\end{enumerate}
+
+\subsection{Second Pass}
+\begin{itemize}
+  \item For each executable assembly statement, generate the corresponding machine language instruction
+  \item Potential problems:
+  \begin{itemize}
+    \item Improper number/type of arguements
+    \item Immediate arguement too large
+  \end{itemize}
+\end{itemize}
 
 
 
