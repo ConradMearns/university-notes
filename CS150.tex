@@ -444,6 +444,24 @@ Second Pass
   \end{itemize}
 \end{itemize}
 
+\section{"ldino" Overview}
+ldino is a tool to build AVR compatible programs in binary and hexadeximal.
+Two components - executable that must be placed in \%PATH\% or \$PATH - and - a resource file '.ldinorc' that must be placed at \%HOMEPATH\% or \$HOME.
 
+\subsection{.ldinorc}
+Contains two variables in text.\\
+arduino-home: location of arduino IDE\\
+arduino-port: port where arduino is attached\\
+
+\subsection{Command Line Options}
+\begin{itemize}
+  \item -L generate listing file (assembly)
+  \item -P program arduino with a .hex file
+  \item -V be verbose
+  \item -h print extended help
+  \item -o specify .hex output
+  \item -v print version
+  \item -x specifies that the input is ASCII hex, not ASCII binary
+\end{itemize}
 
 \end{document}
