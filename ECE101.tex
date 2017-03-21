@@ -185,5 +185,78 @@ For example, the two circuits are equivalent.\\
 \end{circuitikz}
 where $R_{eq} = \frac{1}{\frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3}}$.
 
+\section{Binary / Digital Systems}
+Used in three applications
+\begin{enumerate}
+  \item Coding
+  \item Logic Functions
+  \item Binary Number Representation
+\end{enumerate}
+
+\subsection{Coding a 7 Segment Display}
+$0 \equiv$ off
+$1 \equiv$ on
+The 7 Segment Display is labelled clockwise then inwards starting at the top, using letters a, b, c, d, e, f, and g. Thus, the input of 1111001 displays 3, and 0110011 displays 4.
+
+\subsection{Logic Functions}
+\subsubsection{AND}
+Outputs: C\\
+Inputs: A, B\\
+Definition: C is true when both A and B are true\\
+Boolean: $C = A * B$\\
+Truth Table:
+\begin{tabular}{c c | c}
+  A & B & C\\
+  \hline
+  0 & 0 & 0\\
+  1 & 0 & 0\\
+  0 & 1 & 0\\
+  1 & 1 & 1\\
+\end{tabular}\\
+
+Symbol:
+\begin{circuitikz}
+  \draw (0,0) node[and port]{} (2,0);
+\end{circuitikz}
+
+\subsubsection{OR}
+Outputs: C\\
+Inputs: A, B\\
+Definition: C is true if either A and B are true\\
+Boolean: $C = A + B$\\
+Truth Table:
+\begin{tabular}{c c | c}
+  A & B & C\\
+  \hline
+  0 & 0 & 0\\
+  1 & 0 & 1\\
+  0 & 1 & 1\\
+  1 & 1 & 1\\
+\end{tabular}\\
+
+Symbol:
+\begin{circuitikz}
+  \draw (0,0) node[or port]{} (2,0);
+\end{circuitikz}
+
+\subsubsection{NOT}
+Outputs: C\\
+Inputs: A\\
+Definition: C is true when A is false\\
+Boolean: $C = \bar{A}$\\
+Truth Table:
+\begin{tabular}{c | c}
+  A & C\\
+  \hline
+  0 & 1\\
+  1 & 0\\
+\end{tabular}\\
+
+Symbol:
+\begin{circuitikz}
+  \draw (0,0) node[not port]{} (2,0);
+\end{circuitikz}
+
+
 
 \end{document}
